@@ -38,6 +38,4 @@ public class SuperMarket {
     public void buyToiletPaper(int amount) {
         buyItem(this.toiletPaper, amount);
     }
-
-
 }

@@ -13,5 +13,4 @@ void main() {
 
     customer.goToSuperMarket(superMarket);
     customer.buyItems(productName,amount);
-
 }
