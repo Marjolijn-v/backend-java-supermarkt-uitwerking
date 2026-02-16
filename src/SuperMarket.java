@@ -1,0 +1,43 @@
+public class SuperMarket {
+    Product bread;
+    Product fruit;
+    Product toiletPaper;
+    Product cheese;
+    Product product;
+
+    public SuperMarket(Product bread, Product fruit, Product toiletPaper, Product cheese) {
+        this.bread = bread;
+        this.fruit = fruit;
+        this.toiletPaper = toiletPaper;
+        this.cheese = cheese;
+    }
+
+    public void setProduct(Product product) { this.product = product; }
+
+    public void buyItem(Product product, int amount) {
+        if (amount <= product.amount ) {
+            product.amount = product.amount - amount;
+            IO.println("You bought " + amount + " " + product.name + " for €" + (amount * product.price));
+        } else {
+            IO.println("You cannot buy " + amount + " " + product.name + ", we only have " + product.amount + " " + product.name + " in stock.");
+        }
+    }
+
+    public void buyBread(int amount) {
+        buyItem(this.bread, amount);
+    }
+
+    public void buyFruit(int amount) {
+        buyItem(this.fruit, amount);
+    }
+
+    public void buyCheese(int amount) {
+        buyItem(this.cheese, amount);
+    }
+
+    public void buyToiletPaper(int amount) {
+        buyItem(this.toiletPaper, amount);
+    }
+
+
+}
