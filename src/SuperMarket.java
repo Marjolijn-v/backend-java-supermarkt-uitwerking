@@ -1,18 +1,33 @@
-public class SuperMarket {
-    Product bread;
-    Product fruit;
-    Product toiletPaper;
-    Product cheese;
-    Product product;
+import java.util.ArrayList;
+import java.util.List;
 
-    public SuperMarket(Product bread, Product fruit, Product toiletPaper, Product cheese) {
-        this.bread = bread;
-        this.fruit = fruit;
-        this.toiletPaper = toiletPaper;
-        this.cheese = cheese;
+public class SuperMarket {
+//    Product bread;
+//    Product fruit;
+//    Product toiletPaper;
+//    Product cheese;
+//    Product product;
+
+    List<Product> products;
+    String name;
+
+
+
+    public SuperMarket(String name, List<Product> products) {
+//        this.bread = bread;
+//        this.fruit = fruit;
+//        this.toiletPaper = toiletPaper;
+//        this.cheese = cheese;
+        this.name = name;
+
+        if ( products != null) {
+            this.products = products;
+        } else {
+            this.products = new ArrayList<>();
+        }
     }
 
-    public void setProduct(Product product) { this.product = product; }
+//    public void setProduct(Product product) { this.product = product; }
 
     public void buyItem(Product product, int amount) {
         if (amount <= product.amount ) {
@@ -23,19 +38,19 @@ public class SuperMarket {
         }
     }
 
-    public void buyBread(int amount) {
-        buyItem(this.bread, amount);
-    }
-
-    public void buyFruit(int amount) {
-        buyItem(this.fruit, amount);
-    }
-
-    public void buyCheese(int amount) {
-        buyItem(this.cheese, amount);
-    }
-
-    public void buyToiletPaper(int amount) {
-        buyItem(this.toiletPaper, amount);
-    }
+//    public void buyBread(int amount) {
+//        buyItem(this.bread, amount);
+//    }
+//
+//    public void buyFruit(int amount) {
+//        buyItem(this.fruit, amount);
+//    }
+//
+//    public void buyCheese(int amount) {
+//        buyItem(this.cheese, amount);
+//    }
+//
+//    public void buyToiletPaper(int amount) {
+//        buyItem(this.toiletPaper, amount);
+//    }
 }
