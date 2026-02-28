@@ -19,10 +19,10 @@ public class Customer {
             return;
         }
         for (Product product : superMarket.products) {
-            if (productName.equals(product)) {
+            if (productName.equalsIgnoreCase(name)) {
                 superMarket.buyItem(product, amount);
             } else {
-                IO.println(superMarket + " does not sells " + product);
+                IO.println(superMarket + " does not sell " + product);
             }
 
         }

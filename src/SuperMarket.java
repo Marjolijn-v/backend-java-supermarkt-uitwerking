@@ -38,6 +38,17 @@ public class SuperMarket {
         }
     }
 
+    public void restockItem(String productName, int amount){
+        for (Product product : this.products){
+            if (product.name.equalsIgnoreCase(productName)){
+                product.amount += amount;
+                return;
+            } else {
+                IO.println("Something went wrong, can't restock this item.");
+            }
+        }
+    }
+
 //    public void buyBread(int amount) {
 //        buyItem(this.bread, amount);
 //    }
