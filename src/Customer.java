@@ -4,6 +4,14 @@ public class Customer {
     String name;
     SuperMarket superMarket;
 
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "name='" + name + '\'' +
+                ", superMarket=" + superMarket +
+                '}';
+    }
+
     public Customer(String name) {
         this.name = name;
     }
@@ -19,14 +27,12 @@ public class Customer {
             return;
         }
         for (Product product : superMarket.products) {
-            if (productName.equalsIgnoreCase(name)) {
+            if (productName.equalsIgnoreCase(product.name)) {
                 superMarket.buyItem(product, amount);
-            } else {
-                IO.println(superMarket + " does not sell " + product);
+                return;
             }
-
         }
-
+        IO.println(superMarket + " does not sell " + productName);
 
 
 

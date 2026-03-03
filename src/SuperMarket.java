@@ -11,7 +11,12 @@ public class SuperMarket {
     List<Product> products;
     String name;
 
-
+    @Override
+    public String toString() {
+        return "SuperMarket{" +
+                "name='" + name + '\'' +
+                '}';
+    }
 
     public SuperMarket(String name, List<Product> products) {
 //        this.bread = bread;
@@ -43,10 +48,9 @@ public class SuperMarket {
             if (product.name.equalsIgnoreCase(productName)){
                 product.amount += amount;
                 return;
-            } else {
-                IO.println("Something went wrong, can't restock this item.");
             }
         }
+        IO.println("Something went wrong, can't restock this item.");
     }
 
 //    public void buyBread(int amount) {
